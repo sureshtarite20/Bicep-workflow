@@ -43,7 +43,11 @@ jobs:
           inlineScript: |
             az account show
             az storage -h
-      
+      - name: az bicep deploy
+        working-directory: '${{ github.workspace }}'
+        run: |
+             az deployment group create -g bicepsaRg01 --template-file ./storage_account.bicep
+             
       
          
          
