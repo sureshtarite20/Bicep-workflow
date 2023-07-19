@@ -1,5 +1,5 @@
 @description('storage account name')
-param storage_account_name string = 'st${uniqueString(resourceGroup().name)}'
+param storage_account_name string = 'stg${uniqueString(resourceGroup().name)}'
 @description('storage account location')
 param location string = 'eastus'
 resource storageaccount 'Microsoft.Storage/storageAccounts@2022-09-01' ={
