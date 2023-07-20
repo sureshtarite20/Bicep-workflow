@@ -28,7 +28,10 @@ jobs:
         uses: Azure/login@v1.4.2
         with: 
           creds: ${{ secrets.AZURE_SPN_CREDENTIAL }}
-    
+      - name: deploy bicepInfra
+        working-directory: '${{ github.workspace }}/src/bicep'
+        run: |
+          az deployment group create -g biceprg02 --template-file ./azwebapp01.bicep --parameters webAppName=bicepwebappp-02 
     
       
 
