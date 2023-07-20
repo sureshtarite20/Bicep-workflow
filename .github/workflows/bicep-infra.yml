@@ -24,5 +24,12 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+      - name: Azure Login
+        uses: Azure/login@v1.4.2
+        with: 
+          creds: ${{ secrets.AZURE_SPN_CREDENTIAL }}
+    
+    
+      
 
       
