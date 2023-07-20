@@ -50,6 +50,6 @@ jobs:
         - name: deploy bicepInfra
           working-directory: '${{ github.workspace }}/src/bicep'
           run: |
-            az deployment group create --what-if -g biceprg02 --template-file ./azwebapp01.bicep --parameters webAppName=bicepwebappp-03    
+            az deployment group create -g biceprg02 --template-file ./azwebapp01.bicep --parameters webAppName=bicepwebappp-03    
 
       
