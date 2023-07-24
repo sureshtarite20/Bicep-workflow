@@ -31,7 +31,8 @@ jobs:
       - name: deploy bicepInfra
         working-directory: '${{ github.workspace }}/src/bicep'
         run: |
-          az deployment group create --what-if -g biceprg02 --template-file ./azwebapp01.bicep --parameters webAppName=bicepwebappp-03 
+          # az deployment group create --what-if -g biceprg02 --template-file ./azwebapp01.bicep --parameters webAppName=bicepwebappp-03 
+            az deployment group create --what-if -g az-bicep-dev-eus-rg --template-file ./AppServicePlan.bicep
     
   deploy:
     # The type of runner that the job will run on
@@ -50,6 +51,7 @@ jobs:
         - name: deploy bicepInfra
           working-directory: '${{ github.workspace }}/src/bicep'
           run: |
-            az deployment group create -g biceprg02 --template-file ./azwebapp01.bicep --parameters webAppName=bicepwebappp-03    
+            # az deployment group create -g biceprg02 --template-file ./azwebapp01.bicep --parameters webAppName=bicepwebappp-03    
+              az deployment group create -g az-bicep-dev-eus-rg --template-file ./AppServicePlan.bicep
 
       
